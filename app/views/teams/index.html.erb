@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<% if flash.any? %>
+<% flash.each do |type, msg| %>
+<div>
+<%= msg %>
+</div>
+<% end %>
+<% end %>
+
+<div class = game>
+<h1> The Game </h1>
+</div>
+
+<div>
+<h1> Teams currently in the system :</h1>
+</div>
+
+<div class = text>
+<% @teams.each do |team| %>
+
+<%= link_to team.name, team %>
+||
+<% end %>
+</div>
+
+<div class = text>
+<%= link_to 'Create a New Team', new_team_path, class: 'btn btn-primary' %>
+</div>
+
+<div>
+<h1>Players currently in the system :</h1>
+</div>
+
+<div class = small_text>
+<% @players.each do |player| %>
+<%= link_to player.name, player %>
+||
+<% end %>
+</div>
+
+<div class = text>
+  <%= link_to 'Create a New Player', "/players/new" , class: 'btn btn-primary' %>
+</div>
+
+<div>
+<h1> Players sorted by team :</h1>
+</div>
+<div class = small_text>
+<% @teams.each do |team| %>
+<br>
+<%= team.name %>
+:
+<% team.players.each do |player| %>
+<%= link_to player.name, player %>
+||
+<% end %>
+<% end %>
+</div>
+
+<h1>Tournament related functions :</h1>
+<div class = text>
+<%= link_to 'Create 8 teams of 11 players each', "/create_teams" , class: 'btn btn-primary' %> 
+<%= link_to 'Tournament', "/team_battle", class: 'btn btn-primary' %>
+</div>

@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+.game {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+.text {
+    color: #333;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 15px;
+    text-align: left;
+}
+
+.centered {
+    text-align: center;
+}
+
+.links {
+    font-size: 1.5em;
+    margin: 15px;
+    text-align: center;
+}
+
+.small_text {
+    font-size: 0.8em;
+    margin: 15px;
+    text-align: center;
+}
+
+.scoreboard {
+    margin: 15px;
+    text-align: center;
+}
+
+.style_table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+}
+
+.style_table th {
+    text-align: left;
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.row {
+    text-align: right;
+    border-right: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    min-width: 150px;
+}
+
+.first_row {
+    text-align: left;
+    border-right: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    text-decoration: underline;
+}

@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" %>
+
+<h1 class = centered> Tournaments results </h1>
+
+<table class = style_table>
+    <tr>
+        <th>Equipe</th>
+        <th>Points</th>
+        <th>kill reçu</th>
+        <th>kill marqués</th>
+    </tr>
+    <% @teams.sort_by { |team| team.nb_points }.reverse.each do |team| %>
+        <tr>
+        <td class = first_row><%= team.name %></td>
+        <td class = row><%= team.nb_points %></td>
+        <td class = row><%= team.nb_deaths %></td>
+        <td class = row><%= team.nb_kills %></td>
+        </tr>
+    <% end %>
+</table>
+
+<br>
+<%= link_to 'Back to the main page', root_path, class: 'btn btn-primary' %>

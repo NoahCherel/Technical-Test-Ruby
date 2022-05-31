@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" %>
+
+<h1 class = title >Team's Name : <%= @team.name %></h1>
+
+<h1>Team's Town : <%= @team.town %></h1>
+
+<h1>Players currently in the team :</h1>
+<div class = text>
+<% @team.players.each do |player| %>
+||
+<%= link_to player.name, player %>
+<% end %>
+
+</div>
+
+<h1>Number of players in the team : <%= @team.players.count %></h1>
+
+<div class = text>
+<%= @text %>
+</div>
+
+<div class = links>
+<%= link_to 'Edit', edit_team_path(@team), class: 'btn btn-primary' %>
+<%= link_to 'Delete', team_path(@team), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+</div>
+
+<div class = "links">
+<%= link_to 'Go Back', teams_path, class: 'btn btn-info' %>
+</div>

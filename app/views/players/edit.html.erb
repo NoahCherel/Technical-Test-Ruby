@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" %>
+
+
+<h1 class = centered> Edit Player </h1>
+
+<div class = centered>
+<%= form_with model: @player do |form| %>
+<div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :player_class %><br>
+    <%= form.select :player_class, Player.player_classes %>
+  </div>
+
+<h1>Add player to the Team selected</h1>
+<%= form.label :team_id %><br>
+<%= form.select :team_id, Team.all.map { |team| [team.name, team.id] } %>
+
+  <div>
+    <br>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+
+<div class = title>
+<br>
+<%= @text %>
+<br>
+<%= link_to 'Back', "/teams" %>
+</div>
+

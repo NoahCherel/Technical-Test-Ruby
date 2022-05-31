@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" %>
+
+<h1 class = title >Player's Name : <%= @player.name %></h1>
+
+<h1 class>Player's class : <%= @player.player_class %></h1>
+
+<h1>Current Team : <%= @player.team_id %></h1>
+
+<div>
+<%= form_with model: @player do |form| %>
+
+<h1>Add player to the Team selected</h1>
+<%= form.label :team_id %><br>
+<%= form.select :team_id, Team.all.map { |team| [team.name, team.id] } %>
+
+  <div>
+    <br>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+
+<div class = links>
+<%= link_to 'Edit', edit_player_path(@player), class: 'btn btn-primary' %>
+<%= link_to 'Delete', player_path(@player), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } , method: :delete, class: 'btn btn-danger' %>
+</div>
+
+
+<div class = links>
+<%= link_to 'Go Back', '/teams' , class: "btn btn-info" %>
+</div>

@@ -1,0 +1,21 @@
+
+
+<div class = centered>
+<%= form_with model: team do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :town %><br>
+    <%= form.text_area :town %>
+  </div>
+
+  <div>
+    <br>
+    <%= form.submit %>
+  </div>
+
+<% end %>
+</div>

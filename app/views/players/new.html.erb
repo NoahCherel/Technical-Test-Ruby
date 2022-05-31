@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" %>
+
+<h1 class = centered> New Player </h1>
+
+<div class = centered>
+<%= form_with model: @player do |form| %>
+<div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :player_class %><br>
+    <%= form.select :player_class, Player.player_classes %>
+  </div>
+
+  <div>
+    <br>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
